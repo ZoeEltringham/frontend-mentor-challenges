@@ -11,6 +11,7 @@ body {
   align-items: center;
 }
 
+
 /*------------Row one + two-------------------------*/
 .row-two-container, .row-one-container {
   display: flex;
@@ -181,7 +182,8 @@ blockquote {
 }
 
 @media (min-width: 1079px) {
-  body {
+
+    body {
     background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
     background-repeat: no-repeat;
     background-position: left -10px top, bottom -5px right;
