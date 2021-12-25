@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Spartan', sans-serif;
+  min-height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------Row one + two-------------------------*/
+.row-two-container, .row-one-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/*----Positioning jagged elements---------------*/
+.row-one:last-child .stars:nth-of-type(1), .row-two:nth-of-type(1) {
+  align-self: flex-start;
+}
+
+.row-one:last-child .stars:nth-of-type(2), .row-two:nth-of-type(2) {
+  align-self: center;
+}
+
+.row-one:last-child .stars:nth-of-type(3), .row-two:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+/*------row one styles------------*/
+.row-one-container {
+  margin: 55px 25px 0;
+}
+
+.row-one {
+  flex: 375px;
+}
+
+.row-one:last-child {
+  display: flex;
+  flex-flow: column;
+  max-width: 36em;
+  padding-top: 15px;
+}
+
+/*------------------------Header--------------------------------------*/
+h1 {
+  letter-spacing: -2px;
+  /*---computed font values: At width 375px=38.75px / At width 1440px=49.4px--*/
+  font-size: calc(15px + (1vw + 20px));
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+  max-width: 10em;
+}
+
+header p {
+  color: hsl(303, 10%, 53%);
+  font-weight: 500;
+  max-width: 32em;
+  margin: 10px 0 50px;
+}
+
+header p, .row-two {
+  line-height: 25px;
+}
+
+/*---------------------Star Reviews----------------------------*/
+.stars {
+  background-color: hsl(300, 24%, 96%);
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 50px 10px 25px;
+}
+
+.stars img {
+  padding: 2px 2px 0;
+}
+
+.stars p {
+  display: inline-block;
+  padding: 10px;
+}
+
+.stars p span {
+  text-align: left;
+}
+
+.stars, .row-two {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/*------row two styles------------*/
+.row-two-container {
+  min-height: 20em;
+}
+
+.row-two {
+  flex: 250px;
+  background-color: hsl(300, 43%, 22%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+  padding: 30px;
+  margin: 10px 25px;
+}
+
+.buyer-pic {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.img-text {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.vbuyer {
+  color: hsl(333, 80%, 67%);
+  font-weight: 500;
+  top: -4px;
+}
+
+/*---positioning of name next to image-------*/
+.row-two p span {
+  position: relative;
+  left: 20px;
+}
+/*----End-----*/
+
+blockquote {
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+/*--------------Footer------------------------------------------*/
+.attribution {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*----break points----------------------------------------------*/
+@media (max-width: 789px) {
+  header p {
+    font-size: 14px;
+  }
+
+  header, .row-two p span {
+    text-align: center;
+  }
+
+  h1, header p {
+    margin: 20px auto;
+  }
+
+  .stars {
+    padding: 15px 0 10px;
+  }
+}
+
+@media (max-width: 1078px) {
+  body {
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+  }
+
+  .row-one:last-child {
+    display: block;
+    margin: 10px auto 25px;
+  }
+}
+
+@media (min-width: 1079px) {
+  body {
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left -10px top, bottom -5px right;
+  }
+
+  .row-two {
+    max-width: 19em;
+    height: 180px;
+    margin: 10px 15px;
+  }
+}
